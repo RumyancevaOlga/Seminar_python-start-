@@ -4,9 +4,6 @@
 # - 4 -> [1, 2, 6, 24]
 # - 6 -> [1, 2, 6, 24, 120, 720]
 
-from math import factorial
-
-
 N = int(input('Введите число: '))
 my_factorial = 1
 for i in range(N):
