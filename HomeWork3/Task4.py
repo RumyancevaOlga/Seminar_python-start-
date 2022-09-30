@@ -52,4 +52,4 @@ print(my_array)
 min_max = find_max_and_min(my_array)
 print(min_max)
 print('Разность между максимальным и минимальным значением дробной части элементов ровна: ', 
-round(abs(my_array[min_max[0]] - my_array[min_max[1]]), 2))
+round(my_array[min_max[0]] - my_array[min_max[1]], 2))
