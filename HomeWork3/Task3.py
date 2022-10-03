@@ -20,10 +20,11 @@ def conversion_to_binary(number):
         remains = number % 2
         number = number // 2
         result.append(remains)
-    for i in range(len(result)//2): # переворот
-        temp = result [i]
-        result[i] = result[len(result) - i - 1]
-        result[len(result) - i - 1] = temp
+    # for i in range(len(result)//2): # переворот
+        # temp = result [i]
+        # result[i] = result[len(result) - i - 1]
+        # result[len(result) - i - 1] = temp
+    result.reverse()
     return result
 
 binary_number = conversion_to_binary(user_number)
