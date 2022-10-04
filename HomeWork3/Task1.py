@@ -16,12 +16,15 @@
 # [4, 2, 4, 9]
 # 8
 
-from random import sample
+from random import sample, randint
 
 number_of_elements = int(input('Введите количество элементов списка: '))
 
 def get_array(number_of_elements):
-    array = sample(range(1, 20), number_of_elements)
+    # array = sample(range(1, 20), number_of_elements)
+    array = []
+    for i in range(number_of_elements):
+        array.append(randint(0, 9))
     return array
 
 def sum_of_odd_elements(array):
