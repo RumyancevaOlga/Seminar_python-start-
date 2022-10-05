@@ -21,21 +21,35 @@
 
 user_number = int(input('Введите число: '))
 
+# def find_prime_factors(user_number):
+#     result = []
+#     while user_number % 2 == 0 or user_number % 3 == 0 or user_number % 5 == 0:
+#         if not user_number % 2:
+#             result.append(2)
+#             user_number /= 2
+#         elif not user_number % 3:
+#             result.append(3)
+#             user_number /= 3
+#         elif not user_number % 5:
+#             result.append(5)
+#             user_number /= 5
+#     if user_number > 1:        
+#         result.append(int(user_number))
+#     return result
+
 def find_prime_factors(user_number):
+    i = 2
     result = []
-    while user_number % 2 == 0 or user_number % 3 == 0 or user_number % 5 == 0:
-        if not user_number % 2:
-            result.append(2)
-            user_number /= 2
-        elif not user_number % 3:
-            result.append(3)
-            user_number /= 3
-        elif not user_number % 5:
-            result.append(5)
-            user_number /= 5
-    if user_number > 1:        
+    while i**2 <= user_number:
+        while user_number % i == 0:
+            result.append(i)
+            user_number = user_number / i
+        i += 1
+    if user_number > 1:
         result.append(int(user_number))
     return result
+
+
 
 print('Список простых множителей числа ', user_number, ' равен ', find_prime_factors(user_number))
 
