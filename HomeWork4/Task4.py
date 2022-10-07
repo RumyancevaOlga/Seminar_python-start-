@@ -22,27 +22,46 @@
 # 4*x^2 - 4 = 0
 # 2*x^4 - 3*x^3 + 3*x^2 + 1*x^1 - 2 = 0
 
-from random import randint, choice
+# from random import randint, choice
 
-def get_array(number_of_elements):
-    array = []
-    for i in range(number_of_elements + 1):
-        array.append(randint(0, 9))
-    return array
+# def get_array(number_of_elements):
+#     array = []
+#     for i in range(number_of_elements + 1):
+#         array.append(randint(0, 9))
+#     return array
 
-def get_polynomial(arr, number_of_elements):
-    items = ['+', '-']
-    with open('D:\Домашнее задание GeekBrains\Seminar_python(start)\HomeWork4\Task4.txt', 'a', encoding='utf-8') as my_file:
-        for i in arr:
-            if i > 0 and number_of_elements > 0:
-                my_file.write(f' {i}*x^{number_of_elements} ')
-                my_file.write(choice(items))
-                number_of_elements -= 1
-        if arr[len(arr)-1] != 0:
-            my_file.write(f" {arr[len(arr)-1]} = 0 \n")
-            my_file.close()
+# def get_polynomial(arr, number_of_elements):
+#     items = ['+', '-']
+#     with open('D:\Домашнее задание GeekBrains\Seminar_python(start)\HomeWork4\Task4.txt', 'a', encoding='utf-8') as my_file:
+#         for i in arr:
+#             if i > 0 and number_of_elements > 0:
+#                 my_file.write(f' {i}*x^{number_of_elements} ')
+#                 my_file.write(choice(items))
+#                 number_of_elements -= 1
+#         if arr[len(arr)-1] != 0:
+#             my_file.write(f" {arr[len(arr)-1]} = 0 \n")
+#             my_file.close()
 
-for i in range(3):
-    number_of_elements = int(input('Введите число: '))
-    if number_of_elements > 0:
-        get_polynomial(get_array(number_of_elements), number_of_elements)
+# for i in range(3):
+#     number_of_elements = int(input('Введите число: '))
+#     if number_of_elements > 0:
+#         get_polynomial(get_array(number_of_elements), number_of_elements)
+
+from random import choice
+
+
+def polynomial(num: int):
+    if num < 1:
+        return 0
+
+    poly = "" # пустая строка
+    num_list = range(0, 10) # список итерированный
+
+    with open("poly.txt", "a", encoding="utf-8") as my_f:
+        for i in range(num, 0, -1):
+            value = choice(num_list) # выбрать объект из итерированного списка
+            if value: # если объект не 0
+                poly += f"{value}*x^{i} {choice('+-')} " # сделать запись в строку с выбором + -
+
+        my_f.write(f"{poly}{choice(num_list)} = 0\n") # сделать запись в файл
+
