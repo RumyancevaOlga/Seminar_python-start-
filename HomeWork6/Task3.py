@@ -15,7 +15,6 @@ while name != 'esq':
     name = input('Введите имя сотрудника. Для окончания введите esq. ')
     if name != 'esq':
         my_list.append((name[0], name))
-    print(my_list)
 
 def my_dict(my_list):
     my_diction = {}
