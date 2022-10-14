@@ -1,11 +1,5 @@
-x = 0
-y = 0
+def mult(a, b):
+    return a * b
 
-def init(a, b):
-    global x
-    global y
-    x = a
-    y = b
-
-def do_it():
-    return x * y
+def pow(a, b):
+    return a ** b

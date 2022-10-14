@@ -1,11 +1,8 @@
-x = 0
-y = 0
+def div(a, b):
+    return a / b
 
-def init(a, b):
-    global x
-    global y
-    x = a
-    y = b
+def rem_of_div(a, b):
+    return a % b
 
-def do_it():
-    return x / y
+def int_div(a, b):
+    return a // b
