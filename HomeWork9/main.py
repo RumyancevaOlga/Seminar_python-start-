@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot('TOKEN')
+bot = telebot.TeleBot("5790233525:AAGuuYr_sTvKRYS_8HUZ_LAep1bRi_NupCU")
 field = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 def winning_positions(field):
